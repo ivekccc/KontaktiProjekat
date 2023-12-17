@@ -1,3 +1,4 @@
+
 #container {
   text-align: center;
 
@@ -25,3 +26,101 @@
 #container a {
   text-decoration: none;
 }
+ ion-title{
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+ }
+ ion-header{
+  display: flex;
+  align-items: center;
+ }
+
+ ion-content{
+  display: flex;
+  flex-direction: column;
+  --ion-background-color:black;
+ }
+ ion-fab-button{
+  size: 40px;
+ }
+
+ion-fab{
+  padding-bottom: 15px;
+}
+
+ion-label{
+  font-weight: bolder;
+  font-style: italic;
+}
+
+ion-card{
+  margin-bottom: 5px;
+  margin-top: 5px;
+  
+}
+ion-text-center{
+  text-align: center;
+}
+
+ion-card-content{
+  display: flex;
+  flex-direction: row;
+  padding: 0px;
+  background-color: black;
+}
+
+ion-list{
+  width: 100%;
+  list-style: georgian;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  background-color: black ;
+
+}
+.podaci{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 90%;
+  font-size: 18px;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.meni{
+  width: 10%;
+  display: grid;
+  align-items: center;
+}
+
+.dugmeMeni{
+  width: 90%;
+  background-color: inherit;
+}
+slikaTri{
+  background-color: inherit;
+
+}
+
+ion-card-title{
+  --color:white;
+}
+
+list{
+  border-width: 15px;
+}
+
+.ion-padding{
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  text-align: center;
+}
+.meni-izmeni{
+  border-bottom: solid;
+  border-color: white;
+  border-width: 0.1px;
+  padding-bottom: 5px;
+  margin-bottom: 5px;
+}
+
+

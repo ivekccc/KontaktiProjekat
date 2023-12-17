@@ -1,20 +1,49 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-title class="ion-text-center">
+            Kontakti
+          </ion-title>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
   </ion-toolbar>
-</ion-header>
+</ion-header> 
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+   
+  <ion-content [fullscreen]="true">
+    <ion-list *ngFor="let kontakt of kontakti">
+    <ion-card>
+    <ion-card-content>
+      <div class="podaci" (click)="goToDodajKontaktPage()">
+        <ion-card-title>{{kontakt.ime}} {{kontakt.prezime}}</ion-card-title>
+        <ion-label>{{kontakt.brojTelefona}}</ion-label> 
+      </div> 
+      <div class="meni">
+        <button class="dugmeMeni" id="'open-popover'+{{kontakt.id}}">
+            <img src="../../assets/icon/whiteDotsRemove.png" alt="" class="slikaTri">
+        </button>
+        <ion-popover [keepContentsMounted]="true" trigger="'open-popover'+{{kontakt.id}}">
+          <ng-template class="otvoreni-meni">
+            <ion-content class="ion-padding">
+              <div class="meni-izmeni" (click)="goToIzmeniKontaktPage(kontakt)">
+                Izmeni Kontakt
+              </div>
+              <div clas="meni-obrisi" (click)="goToDodajKontaktPage()">
+                Obrisi Kontakt
+              </div>
+            </ion-content>
+          </ng-template>
+        </ion-popover>
+      </div>
+    </ion-card-content>
+    </ion-card>
+    </ion-list>    
+  <ion-fab vertical="bottom" horizontal="end">
+    <ion-fab-button (click)="goToDodajKontaktPage()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 </ion-content>
