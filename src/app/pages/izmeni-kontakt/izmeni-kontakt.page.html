@@ -1,0 +1,93 @@
+<ion-header [translucent]="true">
+  <ion-toolbar class="toolbar">
+    <ion-buttons slot="start" class="ion-buttons-back">
+      <img src="../../assets/icon/backButton-removebg-preview.png" alt="" class="backButton" (click)="goBack()">
+    </ion-buttons>
+    <ion-title class="naslovStranice">Izmeni Kontakt</ion-title>
+    <ion-buttons slot="end"(click)="updateKontakt(this.kontakt)" class="ion-buttons-check" >
+      <img src="../../assets/icon/checkButton-removebg-preview.png" alt="" class="checkDugme" >
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+<h1 class="naslov">
+  IZMENI KONTAKT
+</h1>
+  <div class="unosPodataak">
+  
+    <ion-card>
+      <ion-card-content class="unosIme">
+        <div class="prostorZaImeSlika">
+          <img src="../../assets/icon/kontaktIkona.png" alt="" class="slikaKontakt">
+        </div>
+        <div class="prostorZaUnosIme">
+          <label class = "item-item-input1">
+            <input type = "text" placeholder ="Ime" class="prostorZaIme" [(ngModel)]="kontakt.ime"  [readonly]="readonlyValue"/>
+         </label>
+         <label class = "item-item-input2">
+          <input type = "text" placeholder = "Prezime" class="prostorZaIme" [(ngModel)]="kontakt.prezime"   [readonly]="readonlyValue"/>
+       </label>
+        </div>
+      </ion-card-content>
+    </ion-card>
+
+
+    <ion-card>
+      <ion-card-content class="unosBrojTelefona">
+        <div class="prostorZaTelefonSlika">
+          <img src="../../assets/icon/telefonSlika.png" alt="" class="slikaTelefon">
+        </div>
+        <div class="prostorZaUnosTelefon">
+          <label class = "item-item-input1">
+            <input type = "text" placeholder = "Broj telefona" class="prostorZaIme" [(ngModel)]="kontakt.brojTelefona"  [readonly]="readonlyValue"/>
+         </label>
+        </div>
+      </ion-card-content>
+    </ion-card>
+
+
+    <ion-card>
+      <ion-card-content class="unosOmiljeni">
+        <div class="prostorZaOmiljeniSlika">
+          <img src="../../assets/icon/starDodaj-removebg-preview.png" alt="" class="slikaOmiljeni">
+        </div>
+        <div class="prostorZaUnosOmiljeni">
+          <div class="pitanjeOmiljeni">
+            Dodati u omiljene?
+          </div>
+          <div class="divCheck">
+            <label for="omiljeni">
+              <ion-checkbox [(ngModel)]="kontakt.omiljeniKontakt" [disabled]="readonlyValue"></ion-checkbox>
+            </label>
+          </div>
+        </div>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card>
+      <ion-card-content class="unosEmail">
+        <div class="prostorZaEmailSlika">
+          <img src="../../assets/icon/emailDodaj-removebg-preview.png" alt="" class="slikaEmail">
+        </div>
+        <div class="prostorZaUnosEmail">
+          <label class = "item-item-input1">
+            <input type = "text" placeholder = "Email" class="prostorZaEmail" [(ngModel)]="kontakt.email" [readonly]="readonlyValue"/>
+         </label>
+        </div>
+      </ion-card-content>
+    </ion-card>
+
+
+
+    
+  </div>
+  <div class="dugmeZaEdit">
+    <ion-buttons class="ion-buttons-enable">
+      <img src="../../assets/icon/editIcon-removebg-preview.png" alt="" class="enableEditDugme" (click)="enableEdit()">
+    </ion-buttons>
+  </div>
+
+
+</ion-content>

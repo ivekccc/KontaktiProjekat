@@ -1,0 +1,28 @@
+<ion-header [translucent]="true">
+  <ion-toolbar class="toolbar">
+    <ion-buttons slot="start" class="ion-buttons-back">
+      <img src="../../assets/icon/backButton-removebg-preview.png" alt="" class="backButton" (click)="goBack()">
+    </ion-buttons>
+    <ion-title class="naslovStranice">Prikaz Kontakta</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="pozadina">
+  <ion-card class="ionCardPodaci">
+    <div class="prikazPodataka">
+      <div class="naslov">
+      <ion-title class="imeKontakta">
+        {{kontakt.ime}} {{kontakt.prezime}}
+      </ion-title>
+    </div>
+    <div class="ostaliPodaci">
+      <div class="brojTelefona">
+        0612567497
+      </div>
+      <div class="emailAdresa">
+        {{kontakt.email}}
+      </div>
+    </div>
+    </div>
+  </ion-card>
+</ion-content>

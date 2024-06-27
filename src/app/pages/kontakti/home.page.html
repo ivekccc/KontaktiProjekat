@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-grid>
+    <ion-grid class="headerGrid">
       <ion-row>
         <ion-col>
           <ion-title class="ion-text-center">
@@ -17,10 +17,13 @@
     <ion-list *ngFor="let kontakt of kontakti">
     <ion-card>
     <ion-card-content>
-      <div class="podaci" (click)="goToDodajKontaktPage()">
+      <div class="podaci" (click)="goToPrikazKontaktaPage(this.kontakt)">
         <ion-card-title>{{kontakt.ime}} {{kontakt.prezime}}</ion-card-title>
-        <ion-label>{{kontakt.brojTelefona}}</ion-label> 
+        <ion-label class="brojTelefona">{{kontakt.brojTelefona}}</ion-label> 
       </div> 
+      <div class="star">
+        <img  *ngIf="kontakt.omiljeniKontakt===true" src="../../assets/icon/star-removebg-preview.png" alt="" class="starSlika">
+      </div>
       <div class="meni">
         <button class="dugmeMeni" id="'open-popover'+{{kontakt.id}}">
             <img src="../../assets/icon/whiteDotsRemove.png" alt="" class="slikaTri">
@@ -31,7 +34,7 @@
               <div class="meni-izmeni" (click)="goToIzmeniKontaktPage(kontakt)">
                 Izmeni Kontakt
               </div>
-              <div clas="meni-obrisi" (click)="goToDodajKontaktPage()">
+              <div clas="meni-obrisi" (click)="deleteKontaktAndClosePopover(this.kontakt)">
                 Obrisi Kontakt
               </div>
             </ion-content>
